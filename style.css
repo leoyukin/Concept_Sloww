@@ -1,0 +1,42 @@
+:root {
+
+    --bg-color: #0b081b;
+    --set-color1: #cf4c8e;
+    --set-color2: #a04545;
+    --bg-color1: #323253;
+    --ply-txt: rgb(126, 161, 255);
+    --ply-spn: red;
+    --rvb-txt: rgb(216, 216, 216);
+    --rvb-spn: blue;
+}
+
+body {
+    background: var(--bg-color);
+    width: 300px;
+    box-sizing: border-box;
+}
+
+header {
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--set-color2);
+    text-shadow: 1px 0px 2px var(--set-color1);
+    text-decoration: underline rgb(119, 44, 44);
+}
+
+.Controls {
+    display: flex;
+    font-size: large;
+    border: 1px solid #48487936;
+    background: var(--bg-color1);
+    font-weight: 150;
+    font-size: large;
+}
+
+.PlaybackSpeed {
+    color: var(--ply-txt);
+}
+
+.ReverbLevel {
+    color: var(--rvb-txt);
+
+}
