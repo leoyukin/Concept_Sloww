@@ -1,12 +1,11 @@
 :root {
 
     --bg-color: #081b12;
-    --set-color1: #235f41;
+    --set-color1: #443b38;
     --set-color2: #6d4c3f;
-    --bg-color1: #323253;
-    --ply-txt: rgb(161, 68, 31);
-    --ply-spn: red;
-    --rvb-txt: rgb(54, 115, 172);
+    --bg-color1: #3b312d;
+    --ply-txt: #1b8a54;
+    --ply-spn: #3ac280;
     --rvb-spn: blue;
 }
 
@@ -19,6 +18,7 @@ body {
 }
 
 header {
+    text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--set-color2);
     text-shadow: 2px 0px 3px var(--set-color1);
@@ -41,9 +41,9 @@ header {
 }
 
 .Controls {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
     font-size: large;
-    border: 1px solid #48487936;
+    border: 1px solid #00000036;
     background: var(--bg-color1);
     font-weight: 150;
     font-size: large;
@@ -52,25 +52,32 @@ header {
 .PlaybackSpeed {
     margin-bottom: 0.6rem;
     color: var(--ply-txt);
-    text-shadow: 0px 0px 1.5px rgb(255, 102, 102);
+    text-shadow: 0px 0px 3.5px var(--ply-spn);
+    text-align: center;
 }
 
 .ReverbLevel {
-    color: var(--rvb-txt);
+    text-align: center;
+    color: var(--ply-txt);
     margin-bottom: 0.6rem;
-    text-shadow: 0px 0px 1.5px rgb(111, 111, 255);
+    text-shadow: 0px 0px 3.5px var(--ply-spn);
 
 }
 
 #reverb-val {
+    font-size: medium;
+    font-family: serif;
     margin-left: 0.4rem;
     text-shadow: none;
-    color: white;
+    color: whitesmoke;
 }
 
 #speed-val {
+    font-size: medium;
+    font-family: serif;
     color: rgb(255, 255, 255);
     text-shadow: none;
+    color: whitesmoke;
 }
 
 input[type="range"] {
