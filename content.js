@@ -38,6 +38,33 @@ function initAudio(video) {
     wetGain.connect(audioctx.destination);
 }
 
+function applySavedSettings() {
+    const video = document.querySelector("video");
+    if (!video) return;
+
+    chrome.storage.local.get(["speed", "reverb"], (data) => {
+        if (data.speed) {
+            video.playbackRate = parseFloat(data.speed);
+            video.preservesPitch = false;
+        }
+        if (data.reverb && parseFloat(data.reverb) > 0) {
+            initAudio(video);
+            if (wetGain) {
+                wetGain.gain.value = parseFloat(data.reverb);
+            }
+        }
+    })
+}
+
+function setupVideoListeners() {
+    const video = document.querySelector("video");
+    if (video) {
+        video.addEventListener("loadedmetadata", applySavedSettings);
+
+        applySavedSettings();
+    }
+}
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === "play") {
         const video = document.querySelector("video");
@@ -62,3 +89,6 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         }
     }
 });
+
+document.addEventListener("yt-navigate-finish", setupVideoListeners);
+setupVideoListeners();
