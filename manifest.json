@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Slow & Reverb YT",
+    "name": "ꜱʟᴏᴡ & ʀᴇᴠᴇʀʙ",
     "version": "1.0",
-    "description": "Slow down and add reverb audio effects to YouTube videos.",
+    "description": "Slows and Reverbs Yt Videos",
     "action": {
         "default_popup": "index.html"
     },
